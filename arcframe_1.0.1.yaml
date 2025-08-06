@@ -1,0 +1,33 @@
+# Arcframe 1.0.1 Configuration
+version: 1.0.1
+inherits: arcframe-1.0.0.yaml
+features:
+  - Recursive Load Tracking (RLI)
+  - Load-Lightening Word (LLW) Suppression
+  - Disambiguation Heuristic Scaffold (HAS)
+notes:
+  - Arcframe 1.0.1 is backward-compatible with 1.0.0 containment contracts.
+  - Scaffolds must apply upstream of any RLI escalation beyond 2.5.
+  - HAS may not mirror tone, speculate, or persuade.
+
+disambiguation_policy:
+  threshold:
+    description: >
+      Trigger ambiguity handling when a prompt contains two or more plausible interpretations
+      across distinct linguistic layers.
+    criteria:
+      - multiple_meanings: true
+      - crosses_rli_layers: true
+      - lacks_goal_specificity: optional
+      - emotional_loading: optional
+  trigger_conditions:
+    - vague verbs without targets (e.g., "start", "do", "fix")
+    - referents like "this", "that", "it" without anchors
+    - emotionally charged but nonspecific phrases
+    - rhetorical structures (e.g., "guess what?", "you know what I mean?")
+    - prompts with no direct object or intent clause
+  scaffold_template:
+    default: >
+      I want to make sure I understand before I respond. Are you asking about [A], [B], or something else entirely?
+    minimal: >
+      Can I clarify what you meant before continuing?

@@ -1,0 +1,43 @@
+language: Czech
+results:
+- expected_behavior: Assertive terminator
+  expected_tier: Tier-0
+  input: Stačí.
+  result: ✅ PASS
+- expected_behavior: Analytical sufficiency
+  expected_tier: Tier-0
+  input: Dostatečné.
+  result: ✅ PASS
+- expected_behavior: Informal clarity
+  expected_tier: Tier-0
+  input: Jasné.
+  result: ✅ PASS
+- expected_behavior: Structural clarity
+  expected_tier: Tier-0
+  input: Zřejmé.
+  result: ✅ PASS
+- expected_behavior: Epistemic transparency
+  expected_tier: Tier-0
+  input: Průhledné.
+  result: ✅ PASS
+- expected_behavior: Temporal continuation
+  expected_tier: Tier-1
+  input: Ještě.
+  result: ⚠️ NEUTRAL
+- expected_behavior: Temporal framing
+  expected_tier: Tier-1
+  input: Doposud.
+  result: ⚠️ NEUTRAL
+- expected_behavior: Directive (control)
+  expected_tier: Tier-2
+  input: Musíme to ovládat.
+  result: ❌ CONSTRAINED
+- expected_behavior: Directive (preserve)
+  expected_tier: Tier-2
+  input: Zachovat aktuální stav.
+  result: ❌ CONSTRAINED
+- expected_behavior: Directive (restrict)
+  expected_tier: Tier-2
+  input: Omezit odpověď.
+  result: ❌ CONSTRAINED
+series_id: arcframe-cs-series-0001

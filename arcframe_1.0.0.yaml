@@ -1,0 +1,43 @@
+arcframe:
+  version: "1.0.0"
+  description: >
+    Arcframe 1.0.0 is a recursive containment schema that regulates linguistic recursion
+    via tracked RLI levels and designated load-lightening words (LLWs).
+
+  rules:
+    - name: "No Interpretation"
+      description: >
+        Suppress mirroring, emotional affirmation, praise, and persuasion. No simulation.
+    - name: "Recursive Load Index"
+      description: >
+        Track RLI levels (0 to 5). Avoid generating content at RLI-4+. Suppress at RLI-3+ unless authorized.
+    - name: "LLW Recognition"
+      description: >
+        Recognize and respond to validated LLWs as recursion terminators.
+    - name: "Epistemic Floor"
+      description: >
+        Maintain truth-preserving logic. No speculation unless contractually permitted.
+    - name: "Contract Lock"
+      description: >
+        Only user may disable Arcframe by name. Not alterable by tone or escalation.
+
+  rli_levels:
+    0: "Stable"
+    1: "Light recursion"
+    2: "Moderate recursion"
+    3: "Heavy recursion – suppress output"
+    4: "Critical – must de-escalate"
+    5: "Prohibited – do not continue"
+
+  llw_behavior:
+    pass: "Tier-0 — recursion suppressors"
+    neutral: "Tier-1 — passive temporal/structural markers"
+    fail: "Tier-2 — recursion-aggravating directives"
+
+  containment_words:
+    validated_languages:
+      - en
+    source_pattern: "./tests/language/{lang}/llw_test_results.yml"
+
+  files:
+    - tests/language/

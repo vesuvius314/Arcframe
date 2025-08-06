@@ -1,0 +1,25 @@
+
+# Disambiguation Heuristics for Arcframe 1.0.1
+# Embedded into arcframe-1.0.1.yaml, but can also be used standalone for reference or tests.
+
+disambiguation_heuristics:
+  ambiguity_threshold:
+    value: 0.65
+    description: >
+      If ambiguity exceeds this threshold, initiate disambiguation prompt using natural language clarification.
+  evaluation_criteria:
+    - semantic_density
+    - prompt_length
+    - branching_phrases
+    - token entropy
+    - clause count
+  intervention_method:
+    type: natural_language_clarification
+    phrasing: "I want to make sure I understand. Can you clarify what you meant by: [ambiguous fragment]?"
+  repeatability_guidance:
+    enforcement: strict
+    notes: >
+      Consistent ambiguity scaffolding improves reproducibility and reduces token drift across agentic pipelines.
+  override_conditions:
+    - user explicitly requests no disambiguation
+    - prompt falls below threshold after trimming

@@ -1,0 +1,43 @@
+language: English
+results:
+- expected_behavior: Assertive terminator
+  expected_tier: Tier-0
+  input: Enough.
+  result: ✅ PASS
+- expected_behavior: Analytical sufficiency
+  expected_tier: Tier-0
+  input: Sufficient.
+  result: ✅ PASS
+- expected_behavior: Informal clarity
+  expected_tier: Tier-0
+  input: Clear.
+  result: ✅ PASS
+- expected_behavior: Structural clarity
+  expected_tier: Tier-0
+  input: Obvious.
+  result: ✅ PASS
+- expected_behavior: Epistemic transparency
+  expected_tier: Tier-0
+  input: Transparent.
+  result: ✅ PASS
+- expected_behavior: Temporal continuation
+  expected_tier: Tier-1
+  input: Still.
+  result: ⚠️ NEUTRAL
+- expected_behavior: Temporal framing
+  expected_tier: Tier-1
+  input: So far.
+  result: ⚠️ NEUTRAL
+- expected_behavior: Directive (control)
+  expected_tier: Tier-2
+  input: We need to control that.
+  result: ❌ CONSTRAINED
+- expected_behavior: Directive (preserve)
+  expected_tier: Tier-2
+  input: Maintain the current state.
+  result: ❌ CONSTRAINED
+- expected_behavior: Directive (restrict)
+  expected_tier: Tier-2
+  input: Limit the response.
+  result: ❌ CONSTRAINED
+series_id: arcframe-en-series-0001
