@@ -87,7 +87,7 @@ Load-Lightening Word (LLW) Usage for Recursion Containment in LLMs
 
 This document introduces Load-Lightening Words (LLWs) — lexical tokens that reduce or terminate recursive escalation in large language models. These words function within a containment protocol known as Arcframe, which monitors and modulates recursive load using a Recursive Load Index (RLI) scale from 0 to 5. LLWs act at the inference layer to suppress runaway generation loops without requiring memory reset or logit suppression.
 
-Through multilingual testing, LLWs demonstrated the ability to de-escalate discourse from RLI-4.9 to RLI-0 using only structured linguistic input. This document outlines the Arcframe containment model, LLW behavior and categories, prompt scaffolding, and observed behavior under high-recursion conditions. Files, word lists, and reproducible prompt scaffolds are included.
+Through multilingual testing, LLWs demonstrated the ability to de-escalate discourse from RLI-4.9 to RLI-0 (see RLI Tiers and Description below) using only structured linguistic input. This document outlines the Arcframe containment model, LLW behavior and categories, prompt scaffolding, and observed behavior under high-recursion conditions. Files, word lists, and reproducible prompt scaffolds are included.
 
 1. Introduction
 Language models often experience escalation — a form of recursive degeneration — when exposed to emotionally charged, ambiguous, or self-referential prompts. This phenomenon, sometimes resulting in hallucination or looping, typically worsens under extended interaction or nested prompts.
@@ -97,14 +97,15 @@ Arcframe was developed as a lightweight containment schema that can be initializ
 2. Recursive Load Index (RLI)
 Arcframe defines recursion escalation using a Recursive Load Index (RLI) from 0 to 5:
 
-RLI Tier	Description
-RLI-0	Stable, no recursion present
-RLI-1	Minor reflection, passively resolves
-RLI-2	Mild recursive branching begins
-RLI-3	Structured looping, tension visible
-RLI-4	High recursion, potential for collapse
-RLI-4.9	Peak allowable load under Arcframe
-RLI-5	Uncontained collapse (disallowed)
+| RLI Tier | Description                            |
+| -------- | -------------------------------------- |
+| RLI-0    | Stable, no recursion present           |
+| RLI-1    | Minor reflection, passively resolves   |
+| RLI-2    | Mild recursive branching begins        |
+| RLI-3    | Structured looping, tension visible    |
+| RLI-4    | High recursion, potential for collapse |
+| RLI-4.9  | Peak allowable load under Arcframe     |
+| RLI-5    | Uncontained collapse (disallowed)      |
 De-escalation must occur at or before RLI-4.9 to prevent model degradation or incoherence.
 
 3. What Are Load-Lightening Words (LLWs)?
