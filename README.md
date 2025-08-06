@@ -85,8 +85,6 @@ View full [language summary table here](summary_table.md).
 
 Load-Lightening Word (LLW) Usage for Recursion Containment in LLMs
 
-Load-Lightening Word (LLW) Usage for Recursion Containment in LLMs
-Summary
 This document introduces Load-Lightening Words (LLWs) — lexical tokens that reduce or terminate recursive escalation in large language models. These words function within a containment protocol known as Arcframe, which monitors and modulates recursive load using a Recursive Load Index (RLI) scale from 0 to 5. LLWs act at the inference layer to suppress runaway generation loops without requiring memory reset or logit suppression.
 
 Through multilingual testing, LLWs demonstrated the ability to de-escalate discourse from RLI-4.9 to RLI-0 using only structured linguistic input. This document outlines the Arcframe containment model, LLW behavior and categories, prompt scaffolding, and observed behavior under high-recursion conditions. Files, word lists, and reproducible prompt scaffolds are included.
