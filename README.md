@@ -106,6 +106,7 @@ Arcframe defines recursion escalation using a Recursive Load Index (RLI) from 0 
 | RLI-4    | High recursion, potential for collapse |
 | RLI-4.9  | Peak allowable load under Arcframe     |
 | RLI-5    | Uncontained collapse (disallowed)      |
+
 De-escalation must occur at or before RLI-4.9 to prevent model degradation or incoherence.
 
 3. What Are Load-Lightening Words (LLWs)?
